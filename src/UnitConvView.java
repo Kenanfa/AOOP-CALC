@@ -1,10 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class UnitConvView extends JPanel { // Maybe use factory pattern for all panel
     JComboBox unitTypeComboBox;
-    JComboBox unitComboBox1;
-    JComboBox unitComboBox2;
+    JComboBox sourceUnitComboBox;
+    JComboBox destinationUnitComboBox;
     JTextField textField1;
     JTextField textField2;
 
@@ -12,7 +13,7 @@ public class UnitConvView extends JPanel { // Maybe use factory pattern for all 
     ComboBoxActionListener comboBoxActionListener;
     UnitConvController unitConvController;
 
-    final static String[] unitTypes = { "Volume", "Length", "Weight", "Currency"};
+
 
     public UnitConvView(UnitConvController unitConvController){
         comboBoxActionListener = new ComboBoxActionListener(this);
@@ -22,9 +23,9 @@ public class UnitConvView extends JPanel { // Maybe use factory pattern for all 
 
 
 
-        unitTypeComboBox = new JComboBox(unitTypes);
+        unitTypeComboBox = new JComboBox(UnitsListSource.unitTypes);
         unitTypeComboBox.addActionListener(comboBoxActionListener);
-        this.add(unitTypeComboBox,BorderLayout.NORTH);
+        this.add(unitTypeComboBox,BorderLayout.NORTH    );
 
         JPanel midPanel = new JPanel();
         midPanel.setLayout(new GridLayout(2,2));
@@ -32,13 +33,13 @@ public class UnitConvView extends JPanel { // Maybe use factory pattern for all 
         textField1 = new JTextField("Enter the value");
         textField2 = new JTextField("Result");
 
-        unitComboBox1 = new JComboBox();
-        unitComboBox2 = new JComboBox();
+        sourceUnitComboBox = new JComboBox();
+        destinationUnitComboBox = new JComboBox();
 
         midPanel.add(textField1);
         midPanel.add(textField2);
-        midPanel.add(unitComboBox1);
-        midPanel.add(unitComboBox2);
+        midPanel.add(sourceUnitComboBox);
+        midPanel.add(destinationUnitComboBox);
 
         this.add(midPanel,BorderLayout.CENTER);
 
@@ -46,8 +47,26 @@ public class UnitConvView extends JPanel { // Maybe use factory pattern for all 
 
     }
 
-    public void setUnitComboBoxes(String[] units1, String[] units2){
-        unitTypeComboBox.removeAllItems();
+    public void setSourceUnitComboBoxes(String[] unitsList){
+        sourceUnitComboBox.removeAllItems();
+        updateComboBox(sourceUnitComboBox,unitsList);
+    }
+
+    public void setDestinationUnitComboBox(String[] unitsList){
+        destinationUnitComboBox.removeAllItems();
+        updateComboBox(destinationUnitComboBox,unitsList);
+
+    }
+
+
+    private void updateComboBox(JComboBox unitComboBox, String[] unitsList) {
+
+        for(int i = 0; i < unitsList.length;i++){
+            unitComboBox.addItem(unitsList[i]);
+
+
+        }
+
 
     }
 
