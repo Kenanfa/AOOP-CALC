@@ -1,13 +1,18 @@
-import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
+package UnitConverter;
 
-public class UnitConvView extends JPanel { // Maybe use factory pattern for all panel
+import Factories.View;
+
+import javax.swing.*;
+
+import java.awt.*;
+
+
+public class UnitConvView extends View { // Maybe use factory pattern for all panel
     JComboBox unitTypeComboBox;
     JComboBox sourceUnitComboBox;
     JComboBox destinationUnitComboBox;
-    JTextField textField1;
-    JTextField textField2;
+    JTextField valueTextField;
+    JTextField resultTextField;
 
 
     ComboBoxActionListener comboBoxActionListener;
@@ -30,21 +35,24 @@ public class UnitConvView extends JPanel { // Maybe use factory pattern for all 
         JPanel midPanel = new JPanel();
         midPanel.setLayout(new GridLayout(2,2));
 
-        textField1 = new JTextField("Enter the value");
-        textField2 = new JTextField("Result");
+        valueTextField = new JTextField("Enter the value");
+        resultTextField = new JTextField("Result");
+        resultTextField.setEditable(false);
 
         sourceUnitComboBox = new JComboBox();
         destinationUnitComboBox = new JComboBox();
 
-        midPanel.add(textField1);
-        midPanel.add(textField2);
+        midPanel.add(valueTextField);
+        midPanel.add(resultTextField);
         midPanel.add(sourceUnitComboBox);
         midPanel.add(destinationUnitComboBox);
 
         this.add(midPanel,BorderLayout.CENTER);
 
-        this.add(new JButton("Convert"),BorderLayout.SOUTH);
+        JButton convertButton = new JButton("Convert");
+        convertButton.addActionListener(e -> unitConvController.convertButtonPressed());
 
+        this.add(convertButton,BorderLayout.SOUTH);
     }
 
     public void setSourceUnitComboBoxes(String[] unitsList){
@@ -58,19 +66,39 @@ public class UnitConvView extends JPanel { // Maybe use factory pattern for all 
 
     }
 
+    public void setResultField(String result){
+
+        resultTextField.setText(result);
+    }
 
     private void updateComboBox(JComboBox unitComboBox, String[] unitsList) {
 
         for(int i = 0; i < unitsList.length;i++){
             unitComboBox.addItem(unitsList[i]);
-
-
         }
 
 
     }
 
+    public String getTextFieldValue() {
+        return valueTextField.getText();
+    }
+
+    public String getUnitType(){
+        return (String) unitTypeComboBox.getSelectedItem();
+    }
+
+    public String getDestinationUnit(){
+        return (String) destinationUnitComboBox.getSelectedItem();
+    }
+
+    public String getSourceUnit(){
+        return (String) sourceUnitComboBox.getSelectedItem();
+    }
+
     public void itemSelected(String selectedItem) {
         unitConvController.unitTypeSelected(selectedItem);
     }
+
+
 }

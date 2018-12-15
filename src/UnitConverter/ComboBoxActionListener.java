@@ -1,7 +1,10 @@
+package UnitConverter;
+
+import UnitConverter.UnitConvView;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class ComboBoxActionListener implements ActionListener {
     UnitConvView panel;
