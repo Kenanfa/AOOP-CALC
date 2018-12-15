@@ -72,12 +72,9 @@ public class UnitConvView extends View { // Maybe use factory pattern for all pa
     }
 
     private void updateComboBox(JComboBox unitComboBox, String[] unitsList) {
-
         for(int i = 0; i < unitsList.length;i++){
             unitComboBox.addItem(unitsList[i]);
         }
-
-
     }
 
     public String getTextFieldValue() {

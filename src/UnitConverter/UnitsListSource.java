@@ -1,6 +1,5 @@
 package UnitConverter;
 
-import java.util.ArrayList;
 
 public class UnitsListSource {
     private String[] length;
