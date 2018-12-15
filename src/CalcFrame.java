@@ -1,9 +1,10 @@
+import Calculator.CalcController;
 import UnitConverter.UnitConvController;
 
 import javax.swing.*;
 
 public class CalcFrame  extends JFrame{
-    Controller controller; // do we need it?!
+
     private final int FRAME_WIDTH = 800;
     private final int FRAME_HEIGHT = 500;
     JTabbedPane tabbedPane;
@@ -12,9 +13,7 @@ public class CalcFrame  extends JFrame{
     CalcController calcController;
 
 
-    public CalcFrame(Controller controller){
-        this.controller = controller;
-
+    public CalcFrame(){
         initializeFrame();
     }
 
