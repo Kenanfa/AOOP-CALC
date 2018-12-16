@@ -12,4 +12,8 @@ public class CalcController {
     public Component getCalcView() {
         return calcView;
     }
+
+    public void setMainTextField(String exp){
+        calcView.getMainTextField().setText(calcView.getMainTextField().getText()+exp);
+    }
 }

@@ -6,7 +6,8 @@ import java.awt.event.ActionListener;
 
 public abstract class Command extends JButton {
 
-    Command(){
+    Command(String label){
+        super(label);
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -17,5 +18,4 @@ public abstract class Command extends JButton {
     }
 
     public abstract void execute();
-
 }
