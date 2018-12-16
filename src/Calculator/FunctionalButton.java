@@ -2,17 +2,17 @@ package Calculator;
 
 import javax.swing.*;
 
-public class ExpressionButton extends Command{
+public class FunctionalButton extends Command {
     private String expression;
     private CalcController calcController;
 
-    public ExpressionButton(String symbol, String exp, CalcController newCalcController) {
+    public FunctionalButton(String symbol, String exp, CalcController newCalcController) {
         super(symbol);
         this.expression = exp;
         this.calcController = newCalcController;
     }
 
-    public ExpressionButton(String exp, CalcController newCalcController) {
+    public FunctionalButton(String exp, CalcController newCalcController) {
         super(exp);
         this.expression = exp;
         this.calcController = newCalcController;
@@ -20,6 +20,6 @@ public class ExpressionButton extends Command{
 
     @Override
     public void execute() {
-        calcController.expressionButtonPressed(expression);
+        calcController.functionalButtonPressed(expression);
     }
 }
