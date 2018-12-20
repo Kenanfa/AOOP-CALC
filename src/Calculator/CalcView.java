@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class CalcView extends View {// Maybe use factory pattern for all panel
+public class CalcView extends View {
     private CalcController calcController;
     private JTextField mainTextField;
     private JLabel resultLabel;

@@ -39,7 +39,11 @@ public class CalcController {
             case "C":
                 calcView.setTextFieldValue("");
                 calcView.setResultLabelValue("Result");
+
+                // C can be treated as an expression
+                calculatorState.expressionButtonPressed(this);
                 break;
+
             case "=":
                 String text = calcView.getTextFieldValue();
                 if(text.equals("")){
