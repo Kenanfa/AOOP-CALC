@@ -2,6 +2,7 @@
   <library name="MathParser.org-mXparser-v.4.2.0-jdk.1.10">
     <CLASSES>
       <root url="jar://$USER_HOME$/Downloads/MathParser.org-mXparser-v.4.2.0-bin-only/jdk.1.10/MathParser.org-mXparser-v.4.2.0-jdk.1.10.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/MathParser.org-mXparser-v.4.2.0-jdk.1.10.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

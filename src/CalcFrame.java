@@ -3,7 +3,7 @@ import UnitConverter.UnitConvController;
 
 import javax.swing.*;
 
-public class CalcFrame  extends JFrame{
+public class CalcFrame  extends JFrame{ // TOdo facade ?!
 
     private final int FRAME_WIDTH = 800;
     private final int FRAME_HEIGHT = 500;
@@ -17,7 +17,7 @@ public class CalcFrame  extends JFrame{
         initializeFrame();
     }
 
-    private void initializeFrame() { // Maybe use builder pattern for building the full frame?!
+    private void initializeFrame() {
         tabbedPane = new JTabbedPane();
         unitConvController = new UnitConvController();
         calcController = new CalcController();

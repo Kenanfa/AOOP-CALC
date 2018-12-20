@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 public abstract class Command extends JButton {
 
+
     Command(String label){
         super(label);
         this.addActionListener(new ActionListener() {
