@@ -11,7 +11,7 @@ public class UnitsListSource {
     
     private void initializeArrays(){
         if(!isInitialized){
-            length = new String[]{"Millimeter","Centimeter", "Meter","Kilometer"};
+            length = new String[]{"Millimeter","Centimeter", "Meter","Kilometer","Mile"};
             volume = new String[]{"Litre","Gallon"};
             weight = new String[]{"Kilograms","Pound"};
             currency = new String[]{"USD","TL"};
