@@ -72,7 +72,7 @@ public class CalcController {
     }
 
     private void appendToDisplayedExpression(String string){
-        calcView.setTextFieldValue(calcView.getTextFieldValue()+ string);
+        calcView.setTextFieldValue(calcView.getTextFieldValue() + string);
     }
 
     public void setState(CalculatorState newCalculatorState){
@@ -102,6 +102,17 @@ public class CalcController {
             calcView.showMessageDialog("There is no value saved in this memory slot!");
             return;
         }
-        appendToDisplayedExpression(memory.getMemoryValue(memoryIndex));
+        appendToDisplayedExpression(format(memory.getMemoryValue(memoryIndex)));
     }
+
+
+    private String format(String value) {
+        double valueAsDouble = Double.parseDouble(value);
+
+        if(valueAsDouble == (long) valueAsDouble)
+            return String.format("%d",(long)valueAsDouble);
+        else
+            return String.format("%s",valueAsDouble);
+    }
+
 }
