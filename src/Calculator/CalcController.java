@@ -1,7 +1,6 @@
 package Calculator;
 
 import org.mariuszgromada.math.mxparser.Expression;
-
 import java.awt.*;
 
 public class CalcController {
@@ -61,6 +60,13 @@ public class CalcController {
                     calculatorState.equalsButtonPressed(this);
 
                 }
+                break;
+            case "⌫":
+                text = calcView.getTextFieldValue();
+                if(!text.equals("")) {
+                    calcView.setTextFieldValue(text.substring(0, text.length()-1));
+                }
+
         }
 
     }
@@ -68,13 +74,9 @@ public class CalcController {
     private void appendToDisplayedExpression(String string){
         calcView.setTextFieldValue(calcView.getTextFieldValue()+ string);
     }
-    public CalculatorState getState(){
-        return calculatorState;
-    }
 
     public void setState(CalculatorState newCalculatorState){
         calculatorState=newCalculatorState;
-        System.out.println(newCalculatorState);
     }
 
     public void memoryButtonPressed(int memoryIndex) {

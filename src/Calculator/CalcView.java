@@ -19,12 +19,6 @@ public class CalcView extends View {
 
         addDisplayToView();
         addButtonsToView();
-//        buttonM1 = NOT EXPRESSION
-//        buttonM2 = NOT EXPRESSION
-//        buttonM3 = NOT EXPRESSION
-//        buttonM4 = NOT EXPRESSION
-//        buttonRes = NOT EXPRESSION
-
     }
 
     private void addDisplayToView(){
@@ -32,10 +26,12 @@ public class CalcView extends View {
         panel.setLayout(new GridLayout(2,1));
 
         mainTextField = new JTextField("");
-        mainTextField.setEnabled(false);
+        mainTextField.setEditable(false);
+        mainTextField.setFont(new Font("SansSerif", Font.BOLD, 20));
         panel.add(mainTextField);
 
         resultLabel = new JLabel("Result");
+        resultLabel.setFont(new Font("SansSerif", Font.BOLD, 20));
         panel.add(resultLabel);
 
         this.add(panel);
@@ -51,9 +47,8 @@ public class CalcView extends View {
         buttonsPanel1.add(new ExpressionButton("1", calcController));
         buttonsPanel1.add(new ExpressionButton("2", calcController));
         buttonsPanel1.add(new ExpressionButton("3", calcController));
-        buttonsPanel1.add(new FunctionalButton("C", calcController,Color.RED));
-
-        buttonsPanel1.add(new JLabel());
+        buttonsPanel1.add(new FunctionalButton("C", calcController, Color.RED));
+        buttonsPanel1.add(new FunctionalButton("⌫", calcController));
 
         buttonsPanel1.add(new ExpressionButton("4", calcController));
         buttonsPanel1.add(new ExpressionButton("5", calcController));
@@ -63,8 +58,8 @@ public class CalcView extends View {
         buttonsPanel1.add(new ExpressionButton("7", calcController));
         buttonsPanel1.add(new ExpressionButton("8",  calcController));
         buttonsPanel1.add(new ExpressionButton("9", calcController));
-        buttonsPanel1.add(new ExpressionButton("*", calcController));
-        buttonsPanel1.add(new ExpressionButton("/",  calcController));
+        buttonsPanel1.add(new ExpressionButton("×", "*", calcController));
+        buttonsPanel1.add(new ExpressionButton("÷", "/",  calcController));
         buttonsPanel1.add(new ExpressionButton(".", calcController));
         buttonsPanel1.add(new ExpressionButton("0",  calcController));
         buttonsPanel1.add(new ExpressionButton(",", "", calcController));

@@ -6,6 +6,7 @@ public class Memory {
     private String latestResult;
     private final int memorySize = 5;
 
+    //Singleton pattern.
     // Private instructor to prevent initialization
     private Memory(){
         memoryArray = new String[memorySize];

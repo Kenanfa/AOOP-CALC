@@ -3,10 +3,10 @@ import UnitConverter.UnitConvController;
 
 import javax.swing.*;
 
-public class CalcFrame  extends JFrame{ // TOdo facade ?!
+public class CalcFrame  extends JFrame{
 
-    private final int FRAME_WIDTH = 800;
-    private final int FRAME_HEIGHT = 500;
+    private final int FRAME_WIDTH = 450;
+    private final int FRAME_HEIGHT = 650;
     JTabbedPane tabbedPane;
 
     UnitConvController unitConvController;

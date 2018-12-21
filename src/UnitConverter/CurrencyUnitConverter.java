@@ -18,8 +18,6 @@ public class CurrencyUnitConverter implements UnitConverter {
                 break;
         }
         return multiplier * valueInUSD;
-
-
     }
 
     private double convertToUSD(String fromUnit, double value) {

@@ -16,7 +16,6 @@ public class LengthUnitConverter implements UnitConverter {
     private static final double METER_TO_KM = 0.001;
 
 
-
     public double convert(String fromUnit, String toUnit, double value) {
         double valueInMeters = convertToMeter(fromUnit,value);
 

@@ -1,9 +1,7 @@
 package UnitConverter;
 
 import Factories.View;
-
 import javax.swing.*;
-
 import java.awt.*;
 
 
@@ -14,19 +12,14 @@ public class UnitConvView extends View { // Maybe use factory pattern for all pa
     JTextField valueTextField;
     JTextField resultTextField;
 
-
     ComboBoxActionListener comboBoxActionListener;
     UnitConvController unitConvController;
-
-
 
     public UnitConvView(UnitConvController unitConvController){
         comboBoxActionListener = new ComboBoxActionListener(this);
         this.unitConvController = unitConvController;
 
         this.setLayout(new BorderLayout());
-
-
 
         unitTypeComboBox = new JComboBox(UnitsListSource.unitTypes);
         unitTypeComboBox.addActionListener(comboBoxActionListener);

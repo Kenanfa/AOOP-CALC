@@ -27,7 +27,7 @@ public class UnitConvController {
 
     public void convertButtonPressed(){
         String stringValue = unitConvView.getTextFieldValue();
-        double value = 9.9;
+        double value;
 
         try{
             value = Double.parseDouble(stringValue);
@@ -37,7 +37,7 @@ public class UnitConvController {
         }
 
 
-        UnitConverter unitConverter; // TODO visitor here>!?!?!?
+        UnitConverter unitConverter;
 
         switch (unitConvView.getUnitType().toLowerCase()){
 

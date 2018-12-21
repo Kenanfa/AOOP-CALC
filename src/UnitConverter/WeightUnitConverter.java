@@ -1,5 +1,7 @@
 package UnitConverter;
+
 import  Factories.UnitConverter;
+
 public class WeightUnitConverter implements UnitConverter {
 
     private static final double KILOGRAMS_TO_POUND = 2.20462;
@@ -31,6 +33,4 @@ public class WeightUnitConverter implements UnitConverter {
         }
         return multiplier * value;
     }
-
-
 }

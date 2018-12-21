@@ -1,6 +1,5 @@
 package Calculator;
 
-import javax.swing.*;
 
 public class ExpressionButton extends Command{
     private String expression;
