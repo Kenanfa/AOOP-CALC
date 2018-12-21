@@ -29,7 +29,7 @@ public class CalcController {
                 if(memory.latestResultIsSet()){
                     appendToDisplayedExpression(memory.getLatestResultValue());
 
-                    // RES can be treated as an expression
+                    // add the saved result to the new exp
                     calculatorState.expressionButtonPressed(this);
                 }else{
                     calcView.showMessageDialog("You haven't performed any evaluations yet!");

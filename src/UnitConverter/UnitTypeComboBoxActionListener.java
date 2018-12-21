@@ -4,10 +4,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ComboBoxActionListener implements ActionListener {
+public class UnitTypeComboBoxActionListener implements ActionListener {
     UnitConvView panel;
 
-    public ComboBoxActionListener(UnitConvView panel){ // maybe some pattern should be applied to panels so they would have comboactionlistener selected
+    public UnitTypeComboBoxActionListener(UnitConvView panel){ // maybe some pattern should be applied to panels so they would have comboactionlistener selected
         this.panel = panel;
     }
 

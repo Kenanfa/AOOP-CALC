@@ -5,25 +5,24 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class UnitConvView extends View { // Maybe use factory pattern for all panel
+public class UnitConvView extends View {
     JComboBox unitTypeComboBox;
     JComboBox sourceUnitComboBox;
     JComboBox destinationUnitComboBox;
     JTextField valueTextField;
     JTextField resultTextField;
 
-    ComboBoxActionListener comboBoxActionListener;
+    UnitTypeComboBoxActionListener unitTypeComboBoxActionListener;
     UnitConvController unitConvController;
 
     public UnitConvView(UnitConvController unitConvController){
-        comboBoxActionListener = new ComboBoxActionListener(this);
+        unitTypeComboBoxActionListener = new UnitTypeComboBoxActionListener(this);
         this.unitConvController = unitConvController;
 
         this.setLayout(new BorderLayout());
 
-        unitTypeComboBox = new JComboBox(UnitsListSource.unitTypes);
-        unitTypeComboBox.addActionListener(comboBoxActionListener);
-        this.add(unitTypeComboBox,BorderLayout.NORTH    );
+
+        addUnitTypeCombobox();
 
         JPanel midPanel = new JPanel();
         midPanel.setLayout(new GridLayout(2,2));
@@ -48,6 +47,13 @@ public class UnitConvView extends View { // Maybe use factory pattern for all pa
         this.add(convertButton,BorderLayout.SOUTH);
     }
 
+    private void addUnitTypeCombobox(){
+        unitTypeComboBox = new JComboBox(UnitsListSource.unitTypes);
+        unitTypeComboBox.addActionListener(unitTypeComboBoxActionListener);
+        this.add(unitTypeComboBox,BorderLayout.NORTH);
+
+    }
+
     public void setSourceUnitComboBoxes(String[] unitsList){
         sourceUnitComboBox.removeAllItems();
         updateComboBox(sourceUnitComboBox,unitsList);
@@ -60,7 +66,6 @@ public class UnitConvView extends View { // Maybe use factory pattern for all pa
     }
 
     public void setResultField(String result){
-
         resultTextField.setText(result);
     }
 
