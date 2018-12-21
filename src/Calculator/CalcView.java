@@ -1,6 +1,6 @@
 package Calculator;
 
-import Factories.View;
+import Abstracts.View;
 import javax.swing.*;
 import java.awt.*;
 

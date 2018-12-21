@@ -1,4 +1,4 @@
-package Factories;
+package UnitConverter;
 
 // Factory pattern
 public interface UnitConverter {

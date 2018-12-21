@@ -1,6 +1,6 @@
 package UnitConverter;
 
-import Factories.View;
+import Abstracts.View;
 import javax.swing.*;
 import java.awt.*;
 
@@ -49,6 +49,7 @@ public class UnitConvView extends View {
 
     private void addUnitTypeCombobox(){
         unitTypeComboBox = new JComboBox(UnitsListSource.unitTypes);
+        unitTypeComboBox.setSelectedIndex(-1);
         unitTypeComboBox.addActionListener(unitTypeComboBoxActionListener);
         this.add(unitTypeComboBox,BorderLayout.NORTH);
 

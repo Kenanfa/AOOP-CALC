@@ -1,17 +1,18 @@
 package UnitConverter;
 
-import Factories.UnitConverter;
 
 public class UnitConvController {
 
     UnitConvView unitConvView;
     UnitsListSource unitsListSource;
+    UnitConverterFactory unitConverterFactory;
 
 
     public UnitConvController(){
 
         unitConvView = new UnitConvView(this);
         unitsListSource = new UnitsListSource();
+        unitConverterFactory = new UnitConverterFactory();
     }
 
     public UnitConvView getUnitConvView(){
@@ -35,34 +36,16 @@ public class UnitConvController {
             unitConvView.showMessageDialog("please enter a valid number/float!");
             return;
         }
-
-
-        UnitConverter unitConverter;
-
-        switch (unitConvView.getUnitType().toLowerCase()){
-
-            default:
-                unitConvView.showMessageDialog("Please select a unit type!");
-                return;
-
-            case "length":
-                unitConverter = new LengthUnitConverter();
-                break;
-            case "volume":
-                unitConverter = new VolumeUnitConverter();
-                break;
-
-            case "currency":
-                unitConverter = new CurrencyUnitConverter();
-                break;
-
-            case "weight":
-                unitConverter = new WeightUnitConverter();
-                break;
-
+        try {
+            UnitConverter unitConverter = unitConverterFactory.getUnitConverter(unitConvView.getUnitType().toLowerCase());
+            double result = unitConverter.convert(unitConvView.getSourceUnit(),unitConvView.getDestinationUnit(),value);
+            unitConvView.setResultField(Double.toString(result));
+        }catch (NullPointerException e){
+            unitConvView.showMessageDialog("Please select unit type!");
         }
-        double result = unitConverter.convert(unitConvView.getSourceUnit(),unitConvView.getDestinationUnit(),value);
-        unitConvView.setResultField(Double.toString(result));
+
+
+
 
 
     }
